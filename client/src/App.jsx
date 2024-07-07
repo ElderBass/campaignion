@@ -8,6 +8,7 @@ import Landing from "./components/views/Landing";
 // import UserPage from "./components/views/UserPage";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
+import Header from "./components/common/Header";
 
 function App() {
 	const ComponentMap = {
@@ -38,6 +39,7 @@ function App() {
 	return (
 		<Router>
 			<div className={styles.mainContainer}>
+				<Header isLoggedIn={isLoggedIn} />
 				<Switch>
 					<AuthRoute exact path="/home" component={Home} />
 					{/* <AuthRoute path="/user/:userId" component={UserPage} /> */}
