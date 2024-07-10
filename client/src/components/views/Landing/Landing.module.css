@@ -30,6 +30,7 @@
     border-radius: 16px;
     cursor: pointer;
     width: 50%;
+    font-family: var(--text-font);
 }
 
 .loginButton {
