@@ -25,12 +25,12 @@ export const validatePassword = (password) => {
 	if (password.length < 8) {
 		return {
 			isValid: false,
-			msg: "Your password must be at least 8 characters, c'mon now",
+			msg: "Deception check failed. Your password must be at least 8 characters long.",
 		};
 	} else if (!passwordHasSpecialCharacter(password)) {
 		return {
 			isValid: false,
-			msg: `Your password must contain at least one number or symbol (e.g. ${symbols.join(
+			msg: `Sleight of hand check failed. Your password must contain at least one number or symbol (e.g. ${symbols.join(
 				", "
 			)})`,
 		};

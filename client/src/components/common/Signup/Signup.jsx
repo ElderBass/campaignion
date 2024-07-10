@@ -7,12 +7,13 @@ import { validatePassword } from "../../../utils/validatePassword";
 import { login } from "../../../utils/login";
 import styles from "./Signup.module.css";
 
-const Signup = ({ setError }) => {
+const Signup = () => {
 	const emailRef = useRef(null);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [formFilledOut, setFormFilledOut] = useState(false);
+	const [error, setError] = useState("");
 
 	const history = useHistory();
 
@@ -53,7 +54,9 @@ const Signup = ({ setError }) => {
 
 	return (
 		<div className={styles.signupContainer}>
-			<div className={styles.spacer} />
+			<div className={styles.errorContainer}>
+				{error && <div className={styles.error}>{error}</div>}
+			</div>
 			<form className={styles.signupForm}>
 				<h1 className={styles.header}>Plunder awaits...</h1>
 				<p className={styles.subheader}>Sign up and start rolling</p>

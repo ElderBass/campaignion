@@ -6,10 +6,13 @@
     width: 100%;
 }
 
-.spacer {
-    height: 100%;
-    max-height: 2rem;
-    width: 100%;
+.errorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--silver);
+    padding: 2rem;
+    text-align: center;
 }
 
 .signupForm {
