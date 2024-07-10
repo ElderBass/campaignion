@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
+const UserRoutes = require('./routes/user');
 const app = express();
 
 const PORT = process.env.PORT || 8000;
@@ -19,7 +20,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
-// app.use(UserRoutes);
+app.use(UserRoutes);
 // app.use(DeckRoutes);
 
 app.get('/*', (req, res) =>

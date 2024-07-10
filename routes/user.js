@@ -4,11 +4,11 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/dbConfig");
 const bodyParser = require("body-parser");
 
-router.post("/api/users/signup", bodyParser.json(), async (req, res) => {
+router.post("/api/dnd/users/signup", bodyParser.json(), async (req, res) => {
 	const { body } = req;
 
 	try {
-		const user = await db.User.create(body);
+		const user = await db.DnDUser.create(body);
 		res.json({ user, isSuccess: true });
 	} catch (e) {
 		console.log("\n\n err in signing up user = ", e, "\n\n");
@@ -16,9 +16,9 @@ router.post("/api/users/signup", bodyParser.json(), async (req, res) => {
 	}
 });
 
-router.post("/api/users/login", bodyParser.json(), async (req, res) => {
+router.post("/api/dnd/users/login", bodyParser.json(), async (req, res) => {
 	const { email, password } = req.body;
-	db.User.findOne({
+	db.DnDUser.findOne({
 		email,
 	}).exec(async (err, user) => {
 		try {
@@ -69,11 +69,11 @@ router.post("/api/users/login", bodyParser.json(), async (req, res) => {
 	});
 });
 
-router.get("/api/users/get-one/:userId", async (req, res) => {
+router.get("/api/dnd/users/get-one/:userId", async (req, res) => {
 	const { userId } = req.params;
 
 	try {
-		const user = await db.User.findOne({ _id: userId });
+		const user = await db.DnDUser.findOne({ _id: userId });
 		res.status(200).json({ user });
 	} catch (err) {
 		console.log("\n\n err inside get one user controller", err, "\n \n");
@@ -81,9 +81,9 @@ router.get("/api/users/get-one/:userId", async (req, res) => {
 	}
 });
 
-router.get("/api/users/get-all", async (req, res) => {
+router.get("/api/dnd/users/get-all", async (req, res) => {
 	try {
-		const users = await db.User.find().sort({ email: 1 });
+		const users = await db.DnDUser.find().sort({ email: 1 });
 		res.status(200).json({ users });
 	} catch (e) {
 		console.log("\n error in retrieving all users = ", e, "\n\n");
@@ -91,12 +91,12 @@ router.get("/api/users/get-all", async (req, res) => {
 	}
 });
 
-router.put("/api/users/update-user", bodyParser.json(), async (req, res) => {
+router.put("/api/dnd/users/update-user", bodyParser.json(), async (req, res) => {
 	const { user } = req.body;
 	const { _id } = user;
 
 	try {
-		const result = await db.User.findByIdAndUpdate(_id, user, {
+		const result = await db.DnDUser.findByIdAndUpdate(_id, user, {
 			new: true,
 		});
 		res.status(200).json({ user: result });

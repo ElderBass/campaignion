@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
+const DnDUserSchema = new Schema({
     email: {
         type: String,
         required: true,
@@ -19,7 +19,7 @@ const UserSchema = new Schema({
     },
 });
 
-UserSchema.pre('save', function (next) {
+DnDUserSchema.pre('save', function (next) {
     const user = this;
     if (this.isModified('password') || this.isNew) {
         bcrypt.genSalt(10, function (saltError, salt) {
@@ -40,7 +40,7 @@ UserSchema.pre('save', function (next) {
     }
 });
 
-UserSchema.methods.validatePassword = async function validatePassword(
+DnDUserSchema.methods.validatePassword = async function validatePassword(
     password,
     hash
 ) {
@@ -52,6 +52,6 @@ UserSchema.methods.validatePassword = async function validatePassword(
     }
 };
 
-const User = mongoose.model('User', UserSchema);
+const DnDUser = mongoose.model('DnDUser', DnDUserSchema);
 
-module.exports = User;
+module.exports = DnDUser;

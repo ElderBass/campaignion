@@ -14,24 +14,32 @@ const Landing = ({ isLoggedIn }) => {
 
 	return (
 		<div className={styles.landingPage}>
-			<p className={styles.welcomeText}>Welcome, Adventurer</p>
 			{screen === SCREENS.login && <Login />}
 			{screen === SCREENS.signup && <Signup />}
 			{!screen && (
-				<div className={styles.landingActions}>
-					<button
-						className={classNames(styles.landingButton, styles.loginButton)}
-						onClick={() => setScreen("login")}
-					>
-						Login
-					</button>
-					<button
-						className={classNames(styles.landingButton, styles.signupButton)}
-						onClick={() => setScreen("signup")}
-					>
-						Sign Up
-					</button>
-				</div>
+				<React.Fragment>
+					<p className={styles.welcomeText}>Welcome, Adventurer</p>
+					<div className={styles.landingActions}>
+						<button
+							className={classNames(
+								styles.landingButton,
+								styles.loginButton
+							)}
+							onClick={() => setScreen("login")}
+						>
+							Login
+						</button>
+						<button
+							className={classNames(
+								styles.landingButton,
+								styles.signupButton
+							)}
+							onClick={() => setScreen("signup")}
+						>
+							Sign Up
+						</button>
+					</div>
+				</React.Fragment>
 			)}
 		</div>
 	);
