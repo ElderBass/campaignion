@@ -7,7 +7,7 @@ import { validatePassword } from "../../../utils/validatePassword";
 import { login } from "../../../utils/login";
 import styles from "./Signup.module.css";
 
-const Signup = () => {
+const Signup = ({ setScreen }) => {
 	const emailRef = useRef(null);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -98,14 +98,20 @@ const Signup = () => {
 				</div>
 			</form>
 			<div className={styles.actions}>
-					<button
-						className={styles.submitBtn}
-						type="button"
-						onClick={onSubmit}
-						disabled={!formFilledOut}
-					>
-						Continue
-					</button>
+				<button
+					className={styles.submitBtn}
+					type="button"
+					onClick={onSubmit}
+					disabled={!formFilledOut}
+				>
+					Continue
+				</button>
+				<button
+					className={styles.backBtn}
+					onClick={() => setScreen(null)}
+				>
+					Back
+				</button>
 			</div>
 		</div>
 	);

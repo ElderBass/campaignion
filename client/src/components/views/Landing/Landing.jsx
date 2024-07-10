@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import Login from "../../common/Login/Login";
 import Signup from "../../common/Signup/Signup";
@@ -12,10 +12,16 @@ const SCREENS = {
 const Landing = ({ isLoggedIn }) => {
 	const [screen, setScreen] = useState(null);
 
+	useEffect(() => {
+		if (isLoggedIn) {
+			setScreen(null);
+		}
+	}, [isLoggedIn]);
+
 	return (
 		<div className={styles.landingPage}>
-			{screen === SCREENS.login && <Login />}
-			{screen === SCREENS.signup && <Signup />}
+			{screen === SCREENS.login && <Login setScreen={setScreen} />}
+			{screen === SCREENS.signup && <Signup setScreen={setScreen} />}
 			{!screen && (
 				<React.Fragment>
 					<p className={styles.welcomeText}>Welcome, Adventurer</p>
