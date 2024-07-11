@@ -5,6 +5,7 @@ const INITIAL_STATE = {
 	decks: [],
 	email: "",
 	username: "",
+	isAdmin: false,
 	favorites: [],
 	following: [],
 	_id: "",
@@ -23,8 +24,9 @@ function user(state = INITIAL_STATE, { type, payload }) {
 			};
 		case UserActions.LOG_IN_USER:
 			const { user, token } = payload;
+			const isAdmin = user.email === process.env.REACT_APP_ADMIN_EMAIL;
 			const username = trimEmail(user.email);
-			return { ...user, username, token, isLoggedIn: true };
+			return { ...user, username, token, isLoggedIn: true, isAdmin };
 		case UserActions.LOG_OUT_USER:
 			return INITIAL_STATE;
 		case UserActions.UPDATE_USER:
