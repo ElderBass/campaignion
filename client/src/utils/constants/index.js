@@ -9,3 +9,7 @@ export const ERROR_MESSAGE = {
 		PASSWORD_MISMATCH: "Crit fail! Your passwords don't match!",
 	},
 };
+
+export const LOCAL_STORAGE_KEYS = {
+	LOGGED_IN: "userLoggedIn",
+};
