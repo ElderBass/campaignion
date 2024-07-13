@@ -4,6 +4,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const path = require('path');
 const UserRoutes = require('./routes/user');
+const CampaignRoutes = require('./routes/campaign');
 const app = express();
 
 const PORT = process.env.PORT || 8000;
@@ -21,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(UserRoutes);
-// app.use(DeckRoutes);
+app.use(CampaignRoutes);
 
 app.get('/*', (req, res) =>
     res.sendFile(path.join(__dirname, './client/build/index.html'))
