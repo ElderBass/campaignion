@@ -11,12 +11,15 @@ const CampaignSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	players: {
+	partyMembers: {
 		type: Array,
 		default: [],
 	},
 	dungeonMaster: {
-		type: String,
+		type: {
+            name: String,
+            email: String,
+        },
 		required: true,
 	},
 	posts: {

@@ -23,6 +23,7 @@ body {
   box-sizing: border-box;
   background-color: var(--dnd-black);
   color: var(--silver);
+  overflow-x: hidden;
 }
 
 p {
@@ -34,6 +35,6 @@ a {
 	text-decoration: none !important;
 }
 
-h1 {
+h1, h2, h3 {
 	margin: 0;
 }
