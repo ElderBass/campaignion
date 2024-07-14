@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from "react";
 import store from "../../../store";
 import { getAllCampaigns } from "../../../api";
-import { campaigns as testCampaigns } from "../../../data/campaigns";
 import styles from "./Home.module.css";
 import LoadingScreen from "../../common/LoadingScreen";
-import CampaignCard from "../../common/CampaignCard";
+import { getUserCampaigns } from "../../../utils/getUserCampaigns";
+import CampaignList from "../../common/CampaignList";
 
 const Home = () => {
 	const { user } = store.getState();
-	console.log("\n user ", user, "\n");
-	const [campaigns, setCampaigns] = useState([]);
+
+	const [userCampaigns, setUserCampagins] = useState([]);
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const getCampaigns = async () => {
 			const response = await getAllCampaigns();
-			console.log("\n response ", response, "\n\n");
-			setCampaigns(testCampaigns);
+			const usersCampaigns = getUserCampaigns(
+				user.email,
+				response.data.campaigns
+			);
+			setUserCampagins(usersCampaigns);
 			setTimeout(() => {
 				setLoading(false);
 			}, 1000);
 		};
 		getCampaigns();
-	}, []);
+	}, [user]);
 
 	return (
 		<div className={styles.homePage}>
@@ -30,13 +33,9 @@ const Home = () => {
 				<LoadingScreen />
 			) : (
 				<React.Fragment>
-					<h1>Select a Campaign</h1>
-					{campaigns.length > 0 ? (
-						<div className={styles.campaignList}>
-							{campaigns.map((campaign) => (
-								<CampaignCard campaign={campaign} />
-							))}
-						</div>
+					<h1>Your Campaigns</h1>
+					{userCampaigns.length > 0 ? (
+						<CampaignList campaigns={userCampaigns} />
 					) : (
 						<p>No active campaigns</p>
 					)}

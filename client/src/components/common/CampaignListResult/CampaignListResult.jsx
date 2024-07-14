@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./CampaignCard.module.css";
+import styles from "./CampaignListResult.module.css";
 
-const CampaignCard = ({ campaign }) => {
+const CampaignListResult = ({ campaign, onClick }) => {
 	const { name, description, dungeonMaster } = campaign;
 
 	return (
-		<div className={styles.campaignCard}>
+		<div className={styles.campaignCard} onClick={() => onClick(campaign)}>
 			<h3 className={styles.campaignName}>{name}</h3>
 			<p>{description}</p>
 			<p>
@@ -16,4 +16,4 @@ const CampaignCard = ({ campaign }) => {
 	);
 };
 
-export default CampaignCard;
+export default CampaignListResult;
