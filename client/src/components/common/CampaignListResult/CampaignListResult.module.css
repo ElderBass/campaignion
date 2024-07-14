@@ -7,9 +7,9 @@
     height: 33%;
     padding: 0 1rem;
     border-radius: 0.5rem;
-    background-color: var(--silver);
-    color: var(--dnd-red);
-    box-shadow: 2px 4px 8px var(--dnd-red);
+    border: solid 4px var(--deep-red);
+    color: var(--light-red);
+    box-shadow: 2px 4px 8px var(--deep-red);
     text-align: center;
 }
 
@@ -20,6 +20,8 @@
 }
 
 .dm {
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--deep-red);
+    margin-right: 10px;
 }
