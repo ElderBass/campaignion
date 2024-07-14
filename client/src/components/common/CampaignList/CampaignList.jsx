@@ -19,6 +19,7 @@ const CampaignList = ({ campaigns }) => {
 				<React.Fragment>
 					{campaigns.map((campaign) => (
 						<CampaignListResult
+                            key={campaign._id}
 							campaign={campaign}
 							onClick={onCardClick}
 						/>

@@ -40,14 +40,16 @@ function App() {
 		<Router>
 			<div className={styles.mainContainer}>
 				<Header isLoggedIn={isLoggedIn} />
-				<Switch>
-					<AuthRoute exact path="/home" component={Home} />
-					{/* <AuthRoute path="/user/:userId" component={UserPage} /> */}
+				<div className={styles.contentContainer}>
+					<Switch>
+						<AuthRoute exact path="/home" component={Home} />
+						{/* <AuthRoute path="/user/:userId" component={UserPage} /> */}
 
-					{/* <AuthRoute exact path="/logout" component={Logout} /> */}
-					<Route exact path="/landing" component={Landing} />
-					<Route component={ComponentMap[CatchAllPage]} />
-				</Switch>
+						{/* <AuthRoute exact path="/logout" component={Logout} /> */}
+						<Route exact path="/landing" component={Landing} />
+						<Route component={ComponentMap[CatchAllPage]} />
+					</Switch>
+				</div>
 			</div>
 		</Router>
 	);
