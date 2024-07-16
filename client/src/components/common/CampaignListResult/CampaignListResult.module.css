@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 90%;
-    height: 33%;
+    min-height: 33%;
     padding: 0 1rem;
     border-radius: 0.5rem;
     border: solid 4px var(--deep-red);

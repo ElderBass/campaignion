@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import store from "./store";
-// import Logout from "./components/views/Logout";
 import AuthRoute from "./components/common/AuthRoute";
+import Header from "./components/common/Header";
 import Home from "./components/views/Home";
 import Landing from "./components/views/Landing";
+import Campaign from "./components/views/Campaign/Campaign";
+// import Logout from "./components/views/Logout";
 // import UserPage from "./components/views/UserPage";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
-import Header from "./components/common/Header";
 
 function App() {
 	const ComponentMap = {
@@ -43,7 +44,7 @@ function App() {
 				<div className={styles.contentContainer}>
 					<Switch>
 						<AuthRoute exact path="/home" component={Home} />
-						{/* <AuthRoute path="/user/:userId" component={UserPage} /> */}
+						<AuthRoute path="/campaign/:campaign" component={Campaign} />
 
 						{/* <AuthRoute exact path="/logout" component={Logout} /> */}
 						<Route exact path="/landing" component={Landing} />

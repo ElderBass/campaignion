@@ -49,6 +49,7 @@ export const campaigns = [
         posts: [],
     },
     {
+        _id: "60b3b3b3b3b3b3b3b3b3b3b4",
         name: "Curse of Strahd",
         description: "A collection of seventeen short, stand-alone D&D adventures designed for characters of levels 1-16.",
         dungeonMaster: {
@@ -97,6 +98,7 @@ export const campaigns = [
         posts: [],
     },
     {
+        _id: "60b3b3b3b3b3b3b3b3b3b3b5",
         name: "Nunya Bidness",
         description: "A collection of seventeen short, stand-alone D&D adventures designed for characters of levels 1-16.",
         dungeonMaster: {
@@ -145,6 +147,7 @@ export const campaigns = [
         posts: [],
     },
     {
+        _id: "60b3b3b3b3b3b3b3b3b3b3b6",
         name: "GTGO",
         description: "A collection of seventeen short, stand-alone D&D adventures designed for characters of levels 1-16.",
         dungeonMaster: {
