@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { getAllPosts } from "../../../api";
+import store from "../../../store";
+import { setCampaignPosts } from "../../../store/actions";
 import styles from "./Campaign.module.css";
+import LoadingScreen from "../../common/LoadingScreen";
 
 const Campaign = () => {
 	const {
 		state: { campaign },
 	} = useLocation();
 
-	const { name, description, dungeonMaster, _id } = campaign;
+	const [showCampaignMenu, setShowCampaignMenu] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-	const [campaignPosts, setCampaignPosts] = useState([]);
+	const { name, description, dungeonMaster, _id } = campaign;
 
 	useEffect(() => {
 		const getPosts = async () => {
+			setLoading(true);
 			const response = await getAllPosts(_id);
 			let renderedPosts = [];
 			if (response.data.posts) {
 				renderedPosts = response.data.posts;
+				setShowCampaignMenu(true);
 			}
-			setCampaignPosts(renderedPosts);
+			store.dispatch(setCampaignPosts(renderedPosts));
+			setLoading(false);
 		};
 
 		getPosts();
@@ -33,18 +40,12 @@ const Campaign = () => {
 				<span className={styles.dm}>Dungeon Master:</span>{" "}
 				{dungeonMaster.name}
 			</p>
-			{campaignPosts.length > 0 ? (
-				<div className={styles.postsList}>
-					{campaignPosts.map((post) => (
-						<div key={post._id} className={styles.post}>
-							<h3>{post.title}</h3>
-							<p>{post.content}</p>
-						</div>
-					))}
-				</div>
-			) : (
-				<div>No posts for this campaign</div>
+			{loading && <LoadingScreen />}
+			{showCampaignMenu && (
+				<div>chabuddy</div>
+				// <CampaignPostsMenu campaignPostTypes={campaignPostTypes} />
 			)}
+
 		</div>
 	);
 };
