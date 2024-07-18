@@ -1,8 +1,22 @@
 .mainContainer {
   min-height: 100vh;
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "content";
   color: var(--silver);
   font-family: var(--text-font);
+  position: relative;
+  z-index: 1;
+}
+
+.contentContainer {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  z-index: 1;
 }

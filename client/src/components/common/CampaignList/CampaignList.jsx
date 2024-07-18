@@ -1,30 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router-dom";
 import CampaignListResult from "../CampaignListResult";
 import styles from "./CampaignList.module.css";
 
 const CampaignList = ({ campaigns }) => {
-	const [selectedCampaign, setSelectedCampaign] = useState(null);
+	const history = useHistory();
 
 	const onCardClick = (campaign) => {
-		setSelectedCampaign(campaign);
+		history.push(`/campaign/${campaign._id}`, { campaign });
 	};
-
-	const goBackHandler = () => setSelectedCampaign(null);
 
 	return (
 		<div className={styles.campaignList}>
-			{selectedCampaign ? (
-				<div></div>
-			) : (
-				<React.Fragment>
-					{campaigns.map((campaign) => (
-						<CampaignListResult
-							campaign={campaign}
-							onClick={onCardClick}
-						/>
-					))}
-				</React.Fragment>
-			)}
+			{campaigns.map((campaign) => (
+				<CampaignListResult
+					key={campaign.name}
+					campaign={campaign}
+					onClick={onCardClick}
+				/>
+			))}
 		</div>
 	);
 };

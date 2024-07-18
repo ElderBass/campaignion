@@ -19,3 +19,9 @@ export const addCampaign = (campaign) =>
 	axios.post("/api/dnd/campaigns/add", { campaign });
 export const assignPartyMember = ({ campaignId, user }) =>
 	axios.put("/api/dnd/campaigns/assign-party-member", { campaignId, user });
+
+export const getAllPosts = (campaignId) =>
+	axios.get("/api/dnd/posts/get-all", { campaignId });
+export const getOnePost = (postId) =>
+	axios.get(`/api/dnd/posts/get-one/${postId}`);
+export const addPost = (post) => axios.post("/api/dnd/posts/add", { post });
