@@ -3,6 +3,7 @@ import * as CampaignActions from '../actions/campaign';
 const INITIAL_STATE = {
     campaign: {},
     campaignPosts: [],
+    activePostType: null,
 };
 
 const campaign = (state = INITIAL_STATE, { type, payload }) => {
@@ -16,6 +17,11 @@ const campaign = (state = INITIAL_STATE, { type, payload }) => {
             return {
                 ...state,
                 campaignPosts: payload,
+            };
+        case CampaignActions.SET_ACTIVE_POST_TYPE:
+            return {
+                ...state,
+                activePostType: payload,
             };
         default:
             return state;

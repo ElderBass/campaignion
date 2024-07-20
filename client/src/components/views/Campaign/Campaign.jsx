@@ -1,51 +1,48 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getAllPosts } from "../../../api";
 import store from "../../../store";
-import { setCampaignPosts } from "../../../store/actions";
-import styles from "./Campaign.module.css";
+import { setActivePostType, setCampaignPosts } from "../../../store/actions/campaign";
 import LoadingScreen from "../../common/LoadingScreen";
+import CampaignPosts from "../../common/CampaignPosts";
+import CampaignDetailScreen from "../../common/CampaignDetailScreen";
+import styles from "./Campaign.module.css";
 
 const Campaign = () => {
+	const activePostType = useSelector(
+		(state) => state.campaign.activePostType
+	);
 	const {
 		state: { campaign },
 	} = useLocation();
 
-	const [showCampaignMenu, setShowCampaignMenu] = useState(false);
 	const [loading, setLoading] = useState(false);
-
-	const { name, description, dungeonMaster, _id } = campaign;
 
 	useEffect(() => {
 		const getPosts = async () => {
+			store.dispatch(setActivePostType(null));
 			setLoading(true);
-			const response = await getAllPosts(_id);
+			const response = await getAllPosts(campaign._id);
 			let renderedPosts = [];
 			if (response.data.posts) {
 				renderedPosts = response.data.posts;
-				setShowCampaignMenu(true);
 			}
 			store.dispatch(setCampaignPosts(renderedPosts));
 			setLoading(false);
 		};
 
 		getPosts();
-	}, [_id]);
+	}, [campaign._id]);
 
 	return (
 		<div className={styles.campaignPage}>
-			<h1>{name}</h1>
-			<p>{description}</p>
-			<p>
-				<span className={styles.dm}>Dungeon Master:</span>{" "}
-				{dungeonMaster.name}
-			</p>
 			{loading && <LoadingScreen />}
-			{showCampaignMenu && (
-				<div>chabuddy</div>
-				// <CampaignPostsMenu campaignPostTypes={campaignPostTypes} />
+			{activePostType ? (
+				<CampaignPosts postType={activePostType} />
+			) : (
+				<CampaignDetailScreen campaign={campaign} />
 			)}
-
 		</div>
 	);
 };

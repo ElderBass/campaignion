@@ -5,6 +5,7 @@
   grid-template-areas: 
     "header"
     "content";
+  grid-template-rows: 1fr 9fr;
   color: var(--silver);
   font-family: var(--text-font);
   position: relative;
@@ -17,6 +18,6 @@
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 2rem 0;
+  padding: 1rem;
   z-index: 1;
 }

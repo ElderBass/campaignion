@@ -16,9 +16,9 @@ export const LOCAL_STORAGE_KEYS = {
 
 export const CAMPAIGN_POST_TYPES = {
 	ADVENTURE_LOG: "Adventure Log",
-	NPC: "NPC",
+	NPC: "NPCs",
 	LOOT: "Loot",
-	LOCATION: "Location",
+	LOCATION: "Locations",
 
 };
 
