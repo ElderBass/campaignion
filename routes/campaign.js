@@ -3,7 +3,7 @@ const db = require("../models");
 const bodyParser = require("body-parser");
 
 router.get(
-	"/api/dnd/campaigns/get-all",
+	"/api/dnd/campaigns/all",
 	bodyParser.json(),
 	async (req, res) => {
 		try {

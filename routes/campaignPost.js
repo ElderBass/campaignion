@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 
 router.get("/api/dnd/posts/all", bodyParser.json(), async (req, res) => {
 	const { campaignId } = req.body;
+	console.log("\n campaignId in get all posts = ", campaignId, "\n");
+
 	try {
 		const posts = await db.CampaignPost.find({ campaignId }).sort({
 			date: -1,

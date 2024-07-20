@@ -12,7 +12,7 @@ export const getAllUsers = () => axios.get("/api/dnd/users/get-all");
 export const updateUser = (user) =>
 	axios.put("/api/dnd/users/update-user", { user });
 
-export const getAllCampaigns = () => axios.get("/api/dnd/campaigns/get-all");
+export const getAllCampaigns = () => axios.get("/api/dnd/campaigns/all");
 export const getOneCampaign = (campaignId) =>
 	axios.get(`/api/dnd/campaigns/get-one/${campaignId}`);
 export const addCampaign = (campaign) =>
@@ -21,7 +21,8 @@ export const assignPartyMember = ({ campaignId, user }) =>
 	axios.put("/api/dnd/campaigns/assign-party-member", { campaignId, user });
 
 export const getAllPosts = (campaignId) =>
-	axios.get("/api/dnd/posts/get-all", { campaignId });
+	axios.get("/api/dnd/posts/all", { campaignId });
+export const getAllPostsOfType = (campaignId, postType) => axios.get(`/api/dnd/posts/all/${campaignId}/${postType}`);
 export const getOnePost = (postId) =>
 	axios.get(`/api/dnd/posts/get-one/${postId}`);
 export const addPost = (post) => axios.post("/api/dnd/posts/add", { post });

@@ -9,3 +9,9 @@ export const setCampaignPosts = (posts) => ({
     type: SET_CAMPAIGN_POSTS,
     payload: posts,
 });
+
+export const SET_ACTIVE_POST_TYPE = "SET_ACTIVE_POST_TYPE";
+export const setActivePostType = (postType) => ({
+    type: SET_ACTIVE_POST_TYPE,
+    payload: postType,
+});
