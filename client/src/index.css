@@ -40,7 +40,6 @@ h1, h2, h3 {
 }
 
 .accordion-button, .accordion-button:not(.collapsed) {
-	/* border: solid 2px var(--deep-red); */
 	background-color: var(--dnd-black);
 	color: var(--dnd-red);
 	font-size: 1rem;

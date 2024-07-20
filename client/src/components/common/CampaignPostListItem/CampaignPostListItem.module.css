@@ -1,0 +1,20 @@
+.postListItem {
+    border-radius: 1rem;
+    background-color: var(--light-red);
+    color: var(--dnd-black);
+    padding: 1rem 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
+}
+
+.detail {
+    font-weight: 600;
+    font-size: .75rem;
+}
+
+.span {
+    font-weight: 600;
+    color: var(--dnd-red);
+    font-size: .75rem;
+}
