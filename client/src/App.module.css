@@ -5,7 +5,7 @@
   grid-template-areas: 
     "header"
     "content";
-  grid-template-rows: 1fr 9fr;
+  grid-template-rows: .5fr 9fr;
   color: var(--silver);
   font-family: var(--text-font);
   position: relative;

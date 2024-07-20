@@ -7,7 +7,6 @@ import styles from "./CampaignPostMenu.module.css";
 
 const CampaignPostMenu = () => {
 	const postTypeList = Object.values(CAMPAIGN_POST_TYPES);
-	const onClick = (type) => store.dispatch(setActivePostType(type));
 
 	return (
 		<div className={styles.postMenu}>
@@ -15,7 +14,7 @@ const CampaignPostMenu = () => {
 				<CampaignPostMenuCard
 					key={postType}
 					className={styles.postTypeButton}
-					onClick={() => onClick(postType)}
+					onClick={() => store.dispatch(setActivePostType(postType))}
 					type={postType}
 				/>
 			))}

@@ -8,6 +8,7 @@ import LoadingScreen from "../../common/LoadingScreen";
 import CampaignPosts from "../../common/CampaignPosts";
 import CampaignDetailScreen from "../../common/CampaignDetailScreen";
 import styles from "./Campaign.module.css";
+import { fakeAdventureLog } from "../../../data/campaignPosts";
 
 const Campaign = () => {
 	const activePostType = useSelector(
@@ -24,7 +25,7 @@ const Campaign = () => {
 			store.dispatch(setActivePostType(null));
 			setLoading(true);
 			const response = await getAllPosts(campaign._id);
-			let renderedPosts = [];
+			let renderedPosts = fakeAdventureLog;
 			if (response.data.posts) {
 				renderedPosts = response.data.posts;
 			}
