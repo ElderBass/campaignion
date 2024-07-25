@@ -12,13 +12,6 @@
     background-color: var(--dnd-black);
 }
 
-.spacer {
-    grid-area: spacer;
-    height: 1rem;
-    width: 100%;
-    background-color: var(--dnd-black);
-}
-
 .postsList {
     grid-area: content;
     display: flex;
