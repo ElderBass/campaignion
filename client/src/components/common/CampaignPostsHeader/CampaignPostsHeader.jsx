@@ -12,7 +12,10 @@ const CampaignPostsHeader = ({ type, searchInput }) => {
 
 	const onChange = (e) => store.dispatch(setPostSearchInput(e.target.value));
 
-	const goBack = () => store.dispatch(setActivePostType(null));
+	const goBack = () => {
+        store.dispatch(setPostSearchInput(""));
+        store.dispatch(setActivePostType(null));
+    };
 
     const onAddPost = () => {};
 
