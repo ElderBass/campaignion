@@ -1,11 +1,14 @@
 .postListItem {
     border-radius: 1rem;
     background-color: var(--light-red);
+    border-radius: .5rem;
     color: var(--dnd-black);
     padding: 1rem 2rem;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 90%;
+    min-height: 120px;
+    height: 120px;
 }
 
 .detail {
