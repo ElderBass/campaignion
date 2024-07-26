@@ -15,3 +15,15 @@ export const setActivePostType = (postType) => ({
     type: SET_ACTIVE_POST_TYPE,
     payload: postType,
 });
+
+export const SET_POST_SEARCH_INPUT = "SET_POST_SEARCH_INPUT";
+export const setPostSearchInput = (input) => ({
+    type: SET_POST_SEARCH_INPUT,
+    payload: input,
+});
+
+export const SET_POST_FILTERS = "SET_POST_FILTERS";
+export const setPostFilters = (filters) => ({
+    type: SET_POST_FILTERS,
+    payload: filters,
+});

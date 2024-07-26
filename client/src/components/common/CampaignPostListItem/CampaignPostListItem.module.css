@@ -1,11 +1,18 @@
 .postListItem {
+    flex: 1 0 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 1rem;
     background-color: var(--light-red);
+    border-radius: .5rem;
     color: var(--dnd-black);
     padding: 1rem 2rem;
     text-overflow: ellipsis;
     overflow: hidden;
     width: 90%;
+    height: 8rem;
+    max-height: 8rem;
 }
 
 .detail {
