@@ -30,13 +30,17 @@ const CampaignPosts = ({ postType }) => {
 	return (
 		<div className={styles.campaignPostsMenu}>
 			<CampaignPostsHeader type={postType} searchInput={searchInput} />
-			{activePosts.length > 0 && (
-				<div className={styles.postsList}>
-					{activePosts.map((post) => (
-						<CampaignPostListItem key={post._id} post={post} />
-					))}
-				</div>
-			)}
+			<div className={styles.postsList}>
+				{activePosts.length > 0 ? (
+					<React.Fragment>
+						{activePosts.map((post) => (
+							<CampaignPostListItem key={post._id} post={post} />
+						))}
+					</React.Fragment>
+				) : (
+					<p className={styles.noPosts}>Perception check failed! No posts found.</p>
+				)}
+			</div>
 		</div>
 	);
 };
