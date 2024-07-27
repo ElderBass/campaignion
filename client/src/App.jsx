@@ -10,6 +10,7 @@ import Campaign from "./components/views/Campaign/Campaign";
 // import UserPage from "./components/views/UserPage";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
+import CreatePostForm from "./components/common/CreatePostForm";
 
 function App() {
 	const ComponentMap = {
@@ -45,7 +46,7 @@ function App() {
 					<Switch>
 						<AuthRoute exact path="/home" component={Home} />
 						<AuthRoute path="/campaign/:campaign" component={Campaign} />
-
+						<AuthRoute exact path="/create-post" component={CreatePostForm} />
 						{/* <AuthRoute exact path="/logout" component={Logout} /> */}
 						<Route exact path="/landing" component={Landing} />
 						<Route component={ComponentMap[CatchAllPage]} />

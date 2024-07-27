@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
 import { getAllPosts } from "../../../api";
 import store from "../../../store";
 import { setActivePostType, setCampaignPosts } from "../../../store/actions/campaign";
@@ -14,9 +13,7 @@ const Campaign = () => {
 	const activePostType = useSelector(
 		(state) => state.campaign.activePostType
 	);
-	const {
-		state: { campaign },
-	} = useLocation();
+	const campaign = useSelector((state) => state.campaign.activeCampaign);
 
 	const [loading, setLoading] = useState(false);
 
@@ -26,7 +23,7 @@ const Campaign = () => {
 			setLoading(true);
 			const response = await getAllPosts(campaign._id);
 			let renderedPosts = fakeAdventureLog;
-			if (response.data.posts) {
+			if (response.data.posts.length) {
 				renderedPosts = response.data.posts;
 			}
 			store.dispatch(setCampaignPosts(renderedPosts));

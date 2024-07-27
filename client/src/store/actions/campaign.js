@@ -1,6 +1,12 @@
-export const SET_CAMPAIGN = "SET_CAMPAIGN";
+export const SET_CAMPAIGNS = "SET_CAMPAIGNS";
 export const setCampaigns = (campaign) => ({
-    type: SET_CAMPAIGN,
+    type: SET_CAMPAIGNS,
+    payload: campaign,
+});
+
+export const SET_ACTIVE_CAMPAIGN = "SET_ACTIVE_CAMPAIGN";
+export const setActiveCampaign = (campaign) => ({
+    type: SET_ACTIVE_CAMPAIGN,
     payload: campaign,
 });
 
