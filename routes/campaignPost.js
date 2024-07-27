@@ -10,6 +10,7 @@ router.get("/api/dnd/posts/all", bodyParser.json(), async (req, res) => {
 		const posts = await db.CampaignPost.find({ campaignId }).sort({
 			date: -1,
 		});
+		console.log("\n posts in get all posts = ", posts, "\n");
 		res.json({ posts, isSuccess: true });
 	} catch (e) {
 		console.log("\n\n err in getting all posts = ", e, "\n\n");
@@ -40,6 +41,8 @@ router.get(
 router.post("/api/dnd/posts/add", bodyParser.json(), async (req, res) => {
 	const { post } = req.body;
 
+	console.log("\n post in add post = ", post, "\n");
+
 	try {
 		const newPost = await db.CampaignPost.create(post);
 		res.status(200).json({ post: newPost });
@@ -48,3 +51,5 @@ router.post("/api/dnd/posts/add", bodyParser.json(), async (req, res) => {
 		res.status(400).json({ error: e });
 	}
 });
+
+module.exports = router;

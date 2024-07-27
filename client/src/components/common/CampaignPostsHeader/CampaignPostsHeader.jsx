@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import store from "../../../store";
 import { faArrowLeft, faSliders } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,6 +10,7 @@ import {
 import styles from "./CampaignPostsHeader.module.css";
 
 const CampaignPostsHeader = ({ type, searchInput }) => {
+    const history = useHistory();
 
 	const onChange = (e) => store.dispatch(setPostSearchInput(e.target.value));
 
@@ -17,7 +19,7 @@ const CampaignPostsHeader = ({ type, searchInput }) => {
         store.dispatch(setActivePostType(null));
     };
 
-    const onAddPost = () => {};
+    const onAddPost = () => history.push("/create-post", { type });
 
 	return (
 		<div className={styles.campaignPostsHeader}>

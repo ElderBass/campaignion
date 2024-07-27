@@ -42,7 +42,7 @@ export const campaigns = [
                 class: "Monk",
                 player: {
                     name: "Seth Zygarlicke",
-                    email: "zygster11@gmail.com",
+                    email: "zenababy@gmail.com",
                 },
             }
         ],

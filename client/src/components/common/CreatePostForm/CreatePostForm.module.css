@@ -1,0 +1,86 @@
+.createPostFormContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    height: 100vh;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.error {
+    min-height: 3rem;
+}
+
+.createPostForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    height: 90%;
+}
+
+.formInput {
+    width: 100%;
+    padding: .5rem;
+    font-size: 1.25rem;
+    border: solid 2px var(--dnd-red);
+    border-radius: .5rem;
+    background-color: var(--dnd-black);
+    color: var(--silver);
+}
+
+.formInput::placeholder {
+    opacity: .6;
+    color: var(--silver);
+}
+
+.titleInput {
+    min-height: 2rem;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid 2px var(--dnd-red);
+}
+
+.textArea {
+    min-height: 8rem;
+    font-size: 1rem;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    align-items: center;
+
+}
+
+.formButton {
+    font-size: 1.5rem;
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 50%;
+    font-family: var(--text-font);
+}
+
+.submitButton {
+    background-color: var(--deep-red);
+    color: var(--silver);
+}
+
+.submitButton:disabled {
+    background-color: var(--silver);
+    opacity: .6;
+    color: var(--dnd-black);
+}
+
+.cancelButton {
+    font-family: var(--text-font);
+    background-color: var(--dnd-black);
+    color: var(--dnd-red);
+    border: 2px solid var(--dnd-red);
+}
