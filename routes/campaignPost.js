@@ -2,8 +2,8 @@ const router = require("express").Router();
 const db = require("../models");
 const bodyParser = require("body-parser");
 
-router.get("/api/dnd/posts/all", bodyParser.json(), async (req, res) => {
-	const { campaignId } = req.body;
+router.get("/api/dnd/posts/all/:campaignId", bodyParser.json(), async (req, res) => {
+	const { campaignId } = req.params;
 	console.log("\n campaignId in get all posts = ", campaignId, "\n");
 
 	try {

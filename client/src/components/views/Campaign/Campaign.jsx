@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getAllPosts } from "../../../api";
 import store from "../../../store";
-import { setActivePostType, setCampaignPosts } from "../../../store/actions/campaign";
+import {
+	setActivePostType,
+	setCampaignPosts,
+} from "../../../store/actions/campaign";
 import LoadingScreen from "../../common/LoadingScreen";
 import CampaignPosts from "../../common/CampaignPosts";
 import CampaignDetailScreen from "../../common/CampaignDetailScreen";
@@ -31,7 +34,7 @@ const Campaign = () => {
 		};
 
 		getPosts();
-	}, [campaign._id]);
+	}, [campaign]);
 
 	return (
 		<div className={styles.campaignPage}>

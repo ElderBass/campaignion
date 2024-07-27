@@ -21,7 +21,7 @@ export const assignPartyMember = ({ campaignId, user }) =>
 	axios.put("/api/dnd/campaigns/assign-party-member", { campaignId, user });
 
 export const getAllPosts = (campaignId) =>
-	axios.get("/api/dnd/posts/all", { campaignId });
+	axios.get(`/api/dnd/posts/all/${campaignId}`);
 export const getAllPostsOfType = (campaignId, postType) => axios.get(`/api/dnd/posts/all/${campaignId}/${postType}`);
 export const getOnePost = (postId) =>
 	axios.get(`/api/dnd/posts/get-one/${postId}`);
