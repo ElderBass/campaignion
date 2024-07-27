@@ -11,7 +11,7 @@ const CampaignPostSchema = new Schema({
 		type: String,
 		required: true,
 	},
-	titile: {
+	title: {
 		type: String,
 		required: true,
 	},
