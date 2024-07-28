@@ -6,6 +6,7 @@ import { isValidPost } from "../../../utils/isValidPost";
 import { getPosterName } from "../../../utils/getPosterName";
 import styles from "./CreatePostForm.module.css";
 import { addPost } from "../../../api";
+import { setActivePostType } from "../../../store/actions/campaign";
 
 const CreatePostForm = () => {
 	const {
@@ -64,6 +65,7 @@ const CreatePostForm = () => {
 
 	const onCancelClick = () => {
 		resetState();
+        store.dispatch(setActivePostType(type));
 		history.push(`/campaign/${_id}`);
 	};
 
