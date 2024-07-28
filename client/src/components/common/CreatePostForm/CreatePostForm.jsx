@@ -6,15 +6,16 @@ import { isValidPost } from "../../../utils/isValidPost";
 import { getPosterName } from "../../../utils/getPosterName";
 import styles from "./CreatePostForm.module.css";
 import { addPost } from "../../../api";
+import { setCampaignPosts } from "../../../store/actions/campaign";
 
 const CreatePostForm = () => {
 	const {
 		state: { type },
 	} = useLocation();
 
-    const {
-        activeCampaign: { _id },
-    } = store.getState().campaign;
+	const {
+		activeCampaign: { _id },
+	} = store.getState().campaign;
 
 	const history = useHistory();
 
@@ -42,7 +43,10 @@ const CreatePostForm = () => {
 
 		try {
 			const response = await addPost(postData);
-			console.log("\n RESPONSE FROM CREATE POST ", response, "\n\n");
+			const { post } = response.data;
+			const { campaignPosts } = store.getState().campaign;
+			const updatedPosts = [...campaignPosts, post];
+			store.dispatch(setCampaignPosts(updatedPosts));
 			resetState();
 		} catch (e) {
 			console.log("\n ERROR CREATING POST ", e, "\n\n");

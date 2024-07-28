@@ -16,6 +16,8 @@ const Campaign = () => {
 	const activePostType = useSelector(
 		(state) => state.campaign.activePostType
 	);
+	const campaignPosts = useSelector((state) => state.campaign.campaignPosts);
+
 	const campaign = useSelector((state) => state.campaign.activeCampaign);
 
 	const [loading, setLoading] = useState(false);
@@ -33,16 +35,23 @@ const Campaign = () => {
 			setLoading(false);
 		};
 
-		getPosts();
-	}, [campaign]);
+		if (!campaignPosts.length) {
+			getPosts();
+		}
+	}, [campaign, campaignPosts]);
 
 	return (
 		<div className={styles.campaignPage}>
-			{loading && <LoadingScreen />}
-			{activePostType ? (
-				<CampaignPosts postType={activePostType} />
+			{loading ? (
+				<LoadingScreen />
 			) : (
-				<CampaignDetailScreen campaign={campaign} />
+				<React.Fragment>
+					{activePostType ? (
+						<CampaignPosts postType={activePostType} />
+					) : (
+						<CampaignDetailScreen campaign={campaign} />
+					)}
+				</React.Fragment>
 			)}
 		</div>
 	);
