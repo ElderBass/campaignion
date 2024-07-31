@@ -1,33 +1,33 @@
 .commentsContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .heading {
-    font-size: 1.2rem;
-    margin-bottom: .8rem;
+	font-size: 1.2rem;
+	margin-bottom: 0.8rem;
 }
 
 .comment {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: .5rem;
-    font-size: .8rem;
-    border-bottom: solid 1px var(--dnd-red);
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.8rem;
+	border-bottom: solid 1px var(--dnd-red);
 }
 
 .firstComment {
-    border-top: solid 1px var(--dnd-red);
+	border-top: solid 1px var(--dnd-red);
 }
 
 .author {
-    color: var(--deep-red);
+	color: var(--deep-red);
 }
 
 .text {
-    text-align: right;
+	text-align: right;
 }

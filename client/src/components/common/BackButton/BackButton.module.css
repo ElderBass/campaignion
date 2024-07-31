@@ -1,10 +1,10 @@
 .backButton {
-    background-color: inherit;
-    color: var(--dnd-red);
-    border: none;
-    cursor: pointer;
+	background-color: inherit;
+	color: var(--dnd-red);
+	border: none;
+	cursor: pointer;
 }
 
 .backButton:hover {
-    color: var(--deep-red);
+	color: var(--deep-red);
 }

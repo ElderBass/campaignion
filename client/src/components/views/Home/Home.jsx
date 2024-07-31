@@ -15,7 +15,11 @@ const Home = () => {
 	useEffect(() => {
 		const getCampaigns = async () => {
 			const response = await getAllCampaigns();
-			console.log("\n RESPONSE FROM GET ALL CAMPAIGNS ", response.data, "\n\n");
+			console.log(
+				"\n RESPONSE FROM GET ALL CAMPAIGNS ",
+				response.data,
+				"\n\n"
+			);
 			const usersCampaigns = getUserCampaigns(
 				user.email,
 				response.data.campaigns

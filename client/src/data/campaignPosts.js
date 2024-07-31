@@ -13,16 +13,16 @@ export const fakeAdventureLog = [
 		comments: [
 			{
 				author: "D'wellen Blackfin",
-				text: "Talos be praised!"
+				text: "Talos be praised!",
 			},
 			{
 				author: "Silver Sickle Moon Sparkling Mountain",
-				text: "I'm so excited!"
+				text: "I'm so excited!",
 			},
 			{
 				author: "Tab Machina",
 				text: "Let's do this!",
-			}
+			},
 		],
 	},
 	{

@@ -10,9 +10,12 @@ const PostComments = ({ comments }) => {
 			{comments.length > 0 ? (
 				<React.Fragment>
 					{comments.map((comment, i) => (
-						<div key={i} className={classNames(styles.comment, {
-                            [styles.firstComment]: i === 0,
-                        })}>
+						<div
+							key={i}
+							className={classNames(styles.comment, {
+								[styles.firstComment]: i === 0,
+							})}
+						>
 							<p className={styles.author}>
 								{formatCommentAuthorName(comment.author)}:
 							</p>

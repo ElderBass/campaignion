@@ -38,7 +38,9 @@ const CampaignPosts = ({ postType }) => {
 						))}
 					</React.Fragment>
 				) : (
-					<p className={styles.noPosts}>Perception check failed! No posts found.</p>
+					<p className={styles.noPosts}>
+						Perception check failed! No posts found.
+					</p>
 				)}
 			</div>
 		</div>

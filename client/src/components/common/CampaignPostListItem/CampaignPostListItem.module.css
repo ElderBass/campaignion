@@ -1,60 +1,60 @@
 .postListItem {
-    flex: 1 0 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 1rem;
-    background-color: var(--light-red);
-    border-radius: .5rem;
-    box-shadow: 4px 4px 4px var(--dnd-red);
-    color: var(--dnd-black);
-    padding: .5rem 1rem;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 100%;
-    max-height: 10rem;
+	flex: 1 0 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-radius: 1rem;
+	background-color: var(--light-red);
+	border-radius: 0.5rem;
+	box-shadow: 4px 4px 4px var(--dnd-red);
+	color: var(--dnd-black);
+	padding: 0.5rem 1rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	max-height: 10rem;
 }
 
 .postListItem:hover {
-    background-color: var(--dnd-red);
-    color: var(--silver);
-    box-shadow: 3px 3px 4px var(--silver);
+	background-color: var(--dnd-red);
+	color: var(--silver);
+	box-shadow: 3px 3px 4px var(--silver);
 
-    .span {
-        color: var(--dnd-black);
-    }
+	.span {
+		color: var(--dnd-black);
+	}
 }
 
 .title {
-    font-weight: 600;
-    font-size: 1.2rem;
+	font-weight: 600;
+	font-size: 1.2rem;
 }
 
 .description {
-    display: block;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-width: calc(100vw - 2rem);
-    max-height: 33%;
-    font-size: .9rem;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: calc(100vw - 2rem);
+	max-height: 33%;
+	font-size: 0.9rem;
 }
 
 .deets {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .2rem;
-    font-size: .75rem;
-    font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.2rem;
+	font-size: 0.75rem;
+	font-weight: 600;
 }
 
 .deet {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 80%;
 }
 
 .span {
-    color: var(--dnd-red);
+	color: var(--dnd-red);
 }

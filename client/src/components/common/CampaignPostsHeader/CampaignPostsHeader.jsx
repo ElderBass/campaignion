@@ -11,25 +11,25 @@ import styles from "./CampaignPostsHeader.module.css";
 import BackButton from "../BackButton/BackButton";
 
 const CampaignPostsHeader = ({ type, searchInput }) => {
-    const history = useHistory();
+	const history = useHistory();
 
 	const onChange = (e) => store.dispatch(setPostSearchInput(e.target.value));
 
 	const goBack = () => {
-        store.dispatch(setPostSearchInput(""));
-        store.dispatch(setActivePostType(null));
-    };
+		store.dispatch(setPostSearchInput(""));
+		store.dispatch(setActivePostType(null));
+	};
 
-    const onAddPost = () => history.push("/create-post", { type });
+	const onAddPost = () => history.push("/create-post", { type });
 
 	return (
 		<div className={styles.campaignPostsHeader}>
 			<div className={styles.campaignPostsHeaderRow}>
 				<BackButton onClick={goBack} />
 				<h2>{type}</h2>
-                <button className={styles.addPostButton} onClick={onAddPost}>
-                    Add
-                </button>
+				<button className={styles.addPostButton} onClick={onAddPost}>
+					Add
+				</button>
 			</div>
 			<div className={styles.campaignPostsHeaderRow}>
 				<input
@@ -38,7 +38,11 @@ const CampaignPostsHeader = ({ type, searchInput }) => {
 					onChange={onChange}
 					placeholder="Sift by title, description, or poster"
 				/>
-                <FontAwesomeIcon className={styles.filterIcon} icon={faSliders} size="1x" />
+				<FontAwesomeIcon
+					className={styles.filterIcon}
+					icon={faSliders}
+					size="1x"
+				/>
 			</div>
 		</div>
 	);
