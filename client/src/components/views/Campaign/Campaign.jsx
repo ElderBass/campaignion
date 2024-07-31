@@ -16,7 +16,6 @@ const Campaign = () => {
 	const activePostType = useSelector(
 		(state) => state.campaign.activePostType
 	);
-	const campaignPosts = useSelector((state) => state.campaign.campaignPosts);
 
 	const campaign = useSelector((state) => state.campaign.activeCampaign);
 
@@ -35,10 +34,8 @@ const Campaign = () => {
 			setLoading(false);
 		};
 
-		if (!campaignPosts.length) {
-			getPosts();
-		}
-	}, [campaign, campaignPosts]);
+		getPosts();
+	}, [campaign]);
 
 	return (
 		<div className={styles.campaignPage}>

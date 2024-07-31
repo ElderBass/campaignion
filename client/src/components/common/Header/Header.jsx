@@ -13,15 +13,13 @@ const Header = ({ isLoggedIn }) => {
 					title={
 						<FontAwesomeIcon
 							icon={faBookOpen}
-							size="1.5x"
+							size="lg"
 							style={{ marginRight: ".5rem" }}
 						/>
 					}
 					id="headerDropdown"
 				>
-					<NavDropdown.Item href="/home">
-						Home
-					</NavDropdown.Item>
+					<NavDropdown.Item href="/home">Home</NavDropdown.Item>
 					<NavDropdown.Divider />
 					<NavDropdown.Item href="#action/3.3">
 						Logout

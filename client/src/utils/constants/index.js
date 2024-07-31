@@ -19,7 +19,6 @@ export const CAMPAIGN_POST_TYPES = {
 	NPC: "NPCs",
 	LOOT: "Loot",
 	LOCATION: "Locations",
-
 };
 
 export const CAMPAIGN_POST_TYPE_CONFIG = {

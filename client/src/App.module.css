@@ -1,24 +1,24 @@
 .mainContainer {
-  min-height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-areas: 
-    "header"
-    "content";
-  grid-template-rows: .5fr 9fr;
-  color: var(--silver);
-  font-family: var(--text-font);
-  position: relative;
-  z-index: 1;
+	min-height: 100vh;
+	width: 100%;
+	display: grid;
+	grid-template-areas:
+		"header"
+		"content";
+	grid-template-rows: 0.5fr 9fr;
+	color: var(--silver);
+	font-family: var(--text-font);
+	position: relative;
+	z-index: 1;
 }
 
 .contentContainer {
-  grid-area: content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 3rem 1rem 0 1rem;
-  z-index: 1;
-  height: 100vh;
+	grid-area: content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	padding: 4rem 1rem 0 1rem;
+	z-index: 1;
+	height: 100vh;
 }

@@ -4,7 +4,7 @@ import styles from "./CampaignDetailScreen.module.css";
 import CampaignPostMenu from "../CampaignPostMenu";
 
 const CampaignDetailScreen = ({ campaign }) => {
-    const { name, partyMembers, dungeonMaster } = campaign;
+	const { name, partyMembers, dungeonMaster } = campaign;
 
 	return (
 		<React.Fragment>

@@ -1,0 +1,59 @@
+.postPage {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+	padding-top: 1rem;
+}
+
+.postActions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.postDeets {
+	width: 100%;
+	font-size: 0.8rem;
+}
+
+.postDeet {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+}
+
+.deet {
+	color: var(--deep-red);
+	font-weight: 600;
+}
+
+.postBody {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	padding: 1rem 0.5rem;
+	color: var(--dnd-black);
+	border: solid 3px var(--dnd-red);
+	border-radius: 0.5rem;
+	background-color: var(--light-red);
+}
+
+.addCommentButton {
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	border: none;
+	color: var(--silver);
+	font-size: 1.2rem;
+	font-weight: 700;
+	background-color: var(--dnd-red);
+	cursor: pointer;
+	transition: all 0.3s;
+}
