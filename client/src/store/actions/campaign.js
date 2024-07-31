@@ -22,6 +22,12 @@ export const setActivePostType = (postType) => ({
     payload: postType,
 });
 
+export const SET_ACTIVE_POST = "SET_ACTIVE_POST";
+export const setActivePost = (post) => ({
+    type: SET_ACTIVE_POST,
+    payload: post,
+});
+
 export const SET_POST_SEARCH_INPUT = "SET_POST_SEARCH_INPUT";
 export const setPostSearchInput = (input) => ({
     type: SET_POST_SEARCH_INPUT,

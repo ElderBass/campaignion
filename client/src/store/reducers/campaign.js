@@ -5,6 +5,7 @@ const INITIAL_STATE = {
 	campaigns: [],
 	campaignPosts: [],
 	activePostType: null,
+    activePost: null,
 	searchInput: "",
 	filters: [],
 };
@@ -31,6 +32,11 @@ const campaign = (state = INITIAL_STATE, { type, payload }) => {
 				...state,
 				activePostType: payload,
 			};
+        case CampaignActions.SET_ACTIVE_POST:
+            return {
+                ...state,
+                activePost: payload,
+            };
 		case CampaignActions.SET_POST_SEARCH_INPUT:
 			return {
 				...state,

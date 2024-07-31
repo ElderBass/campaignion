@@ -1,13 +1,23 @@
 import React from "react";
-import dayjs from "../../../utils/dayjs";
+import { useHistory } from "react-router-dom";
+import store from "../../../store";
+import { setActivePost } from "../../../store/actions/campaign";
 import styles from "./CampaignPostListItem.module.css";
+import { formatPostDate } from "../../../utils/formatPostDate";
 
 const CampaignPostListItem = ({ post }) => {
+	const history = useHistory();
+
 	const { title, description, poster, dateAdded } = post;
-	const date = dayjs(dateAdded).format("MMMM D, YYYY");
+	const date = formatPostDate(dateAdded);
+
+	const onPostClick = () => {
+		store.dispatch(setActivePost(post));
+		history.push(`/post/${post._id}`);
+	};
 
 	return (
-		<div className={styles.postListItem}>
+		<div onClick={onPostClick} className={styles.postListItem}>
 			<p className={styles.title}>{title}</p>
 			<p className={styles.description}>{description}</p>
 			<div className={styles.deets}>

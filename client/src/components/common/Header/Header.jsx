@@ -13,7 +13,7 @@ const Header = ({ isLoggedIn }) => {
 					title={
 						<FontAwesomeIcon
 							icon={faBookOpen}
-							size="1.5x"
+							size="lg"
 							style={{ marginRight: ".5rem" }}
 						/>
 					}

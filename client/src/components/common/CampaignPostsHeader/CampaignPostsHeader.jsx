@@ -1,13 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import store from "../../../store";
-import { faArrowLeft, faSliders } from "@fortawesome/free-solid-svg-icons";
+import { faSliders } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	setActivePostType,
 	setPostSearchInput,
 } from "../../../store/actions/campaign";
 import styles from "./CampaignPostsHeader.module.css";
+import BackButton from "../BackButton/BackButton";
 
 const CampaignPostsHeader = ({ type, searchInput }) => {
     const history = useHistory();
@@ -24,9 +25,7 @@ const CampaignPostsHeader = ({ type, searchInput }) => {
 	return (
 		<div className={styles.campaignPostsHeader}>
 			<div className={styles.campaignPostsHeaderRow}>
-				<button className={styles.backButton} onClick={goBack}>
-					<FontAwesomeIcon icon={faArrowLeft} size="2x" />
-				</button>
+				<BackButton onClick={goBack} />
 				<h2>{type}</h2>
                 <button className={styles.addPostButton} onClick={onAddPost}>
                     Add

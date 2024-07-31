@@ -21,17 +21,6 @@
     width: 100%;
 }
 
-.backButton {
-    background-color: var(--dnd-black);
-    color: var(--dnd-red);
-    border: none;
-    cursor: pointer;
-}
-
-.backButton:hover {
-    color: var(--deep-red);
-}
-
 .addPostButton {
     padding: .3rem 1rem;
     border-radius: 0.5rem;

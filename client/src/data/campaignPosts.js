@@ -1,28 +1,3 @@
-// campaignId: {
-//     type: String,
-//     required: true,
-// },
-// type: {
-//     type: String,
-//     required: true,
-// },
-// description: {
-//     type: String,
-//     required: true,
-// },
-// poster: {
-//     type: String,
-//     required: true,
-// },
-// dateAdded: {
-//     type: Date,
-//     default: Date.now,
-// },
-// comments: {
-//     type: Array,
-//     default: [],
-// },
-
 const campaignId = "66a567b4aea166a1c491174d";
 const dateAdded = new Date().toISOString();
 
@@ -35,7 +10,20 @@ export const fakeAdventureLog = [
 		description: "The party has set out on their journey to the mountains.",
 		poster: "Avallynd Sylvaranth",
 		dateAdded,
-		comments: [],
+		comments: [
+			{
+				author: "D'wellen Blackfin",
+				text: "Talos be praised!"
+			},
+			{
+				author: "Silver Sickle Moon Sparkling Mountain",
+				text: "I'm so excited!"
+			},
+			{
+				author: "Tab Machina",
+				text: "Let's do this!",
+			}
+		],
 	},
 	{
 		_id: "2",

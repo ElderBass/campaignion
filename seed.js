@@ -14,7 +14,20 @@ const posts = [
 		title: "The Journey Begins",
 		description: "The party has set out on their journey to the mountains.",
 		poster: "Avallynd Sylvaranth",
-		comments: [],
+		comments: [
+			{
+				author: "D'wellen Blackfin",
+				text: "Talos be praised!",
+			},
+			{
+				author: "Silver Sickle Moon Sparkling Mountain",
+				text: "I'm so excited!",
+			},
+			{
+				author: "Tab Machina",
+				text: "Let's do this!",
+			},
+		],
 	},
 	{
 		campaignId,
