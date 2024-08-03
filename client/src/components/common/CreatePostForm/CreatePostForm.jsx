@@ -2,11 +2,13 @@ import React, { useMemo, useState } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import classNames from "classnames";
 import store from "../../../store";
+import { setSuccessAlert } from "../../../store/actions/alert";
+import { SUCCESS_ALERTS } from "../../../utils/constants";
 import { isValidPost } from "../../../utils/isValidPost";
 import { getPosterName } from "../../../utils/getPosterName";
-import styles from "./CreatePostForm.module.css";
 import { addPost } from "../../../api";
 import { setCampaignPosts } from "../../../store/actions/campaign";
+import styles from "./CreatePostForm.module.css";
 
 const CreatePostForm = () => {
 	const {
@@ -44,11 +46,10 @@ const CreatePostForm = () => {
 		try {
 			const response = await addPost(postData);
 			const { post } = response.data;
-            console.log("\n POST AFTER CREATING ONE?? ", post, "\n\n");
 			const { campaignPosts } = store.getState().campaign;
 			const updatedPosts = [...campaignPosts, post];
 			store.dispatch(setCampaignPosts(updatedPosts));
-			resetState();
+			onCancelOrGoBack(true);
 		} catch (e) {
 			console.log("\n ERROR CREATING POST ", e, "\n\n");
 			setError(
@@ -67,9 +68,12 @@ const CreatePostForm = () => {
 		setError("");
 	};
 
-	const onCancelClick = () => {
+	const onCancelOrGoBack = (dispatchAlert = false) => {
 		resetState();
 		history.push(`/campaign/${_id}`);
+		if (dispatchAlert) {
+			store.dispatch(setSuccessAlert(SUCCESS_ALERTS.ADD_POST));
+		}
 	};
 
 	return (
@@ -109,7 +113,7 @@ const CreatePostForm = () => {
 							styles.formButton,
 							styles.cancelButton
 						)}
-						onClick={onCancelClick}
+						onClick={onCancelOrGoBack}
 					>
 						Cancel
 					</button>
