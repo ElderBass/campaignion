@@ -52,4 +52,20 @@ router.post("/api/dnd/posts/add", bodyParser.json(), async (req, res) => {
 	}
 });
 
+router.put("/api/dnd/posts/update", bodyParser.json(), async (req, res) => {
+	const { post } = req.body;
+
+	try {
+		const updatedPost = await db.CampaignPost.findOneAndUpdate(
+			{ _id: post._id },
+			post,
+			{ new: true }
+		);
+		res.status(200).json({ post: updatedPost });
+	} catch (e) {
+		console.log("\n\n error in updating post = ", e, "\n\n");
+		res.status(400).json({ error: e });
+	}
+});
+
 module.exports = router;

@@ -27,3 +27,4 @@ export const getAllPostsOfType = (campaignId, postType) =>
 export const getOnePost = (postId) =>
 	axios.get(`/api/dnd/posts/get-one/${postId}`);
 export const addPost = (post) => axios.post("/api/dnd/posts/add", { post });
+export const updatePost = (post) => axios.put("/api/dnd/posts/update", { post });
