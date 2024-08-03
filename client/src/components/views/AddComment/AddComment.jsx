@@ -27,7 +27,7 @@ const AddComment = ({ post, exitScreen }) => {
 		try {
 			const response = await updatePost(postData);
             store.dispatch(setActivePost(response.data.post));
-			await getCampaignPosts(false);
+			await getCampaignPosts();
 			exitScreen(true);
 		} catch (e) {
 			console.log("\n ERROR ADDING COMMENT ", e, "\n\n");

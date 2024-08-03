@@ -44,6 +44,7 @@ const CreatePostForm = () => {
 		try {
 			const response = await addPost(postData);
 			const { post } = response.data;
+            console.log("\n POST AFTER CREATING ONE?? ", post, "\n\n");
 			const { campaignPosts } = store.getState().campaign;
 			const updatedPosts = [...campaignPosts, post];
 			store.dispatch(setCampaignPosts(updatedPosts));
