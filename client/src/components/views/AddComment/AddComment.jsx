@@ -3,9 +3,9 @@ import classNames from "classnames";
 import { updatePost } from "../../../api";
 import { getPosterName } from "../../../utils/getPosterName";
 import { getCampaignPosts } from "../../../utils/getCampaignPosts";
-import styles from "./AddComment.module.css";
 import store from "../../../store";
 import { setActivePost } from "../../../store/actions/campaign";
+import styles from "./AddComment.module.css";
 
 const AddComment = ({ post, exitScreen }) => {
 	const [comment, setComment] = useState("");
@@ -27,8 +27,8 @@ const AddComment = ({ post, exitScreen }) => {
 		try {
 			const response = await updatePost(postData);
             store.dispatch(setActivePost(response.data.post));
-			await getCampaignPosts();
-			exitScreen();
+			await getCampaignPosts(false);
+			exitScreen(true);
 		} catch (e) {
 			console.log("\n ERROR ADDING COMMENT ", e, "\n\n");
 			setError(e.message);

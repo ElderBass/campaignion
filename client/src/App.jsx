@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import store from "./store";
 import AuthRoute from "./components/common/AuthRoute";
 import Header from "./components/common/Header";
+import SuccessAlert from "./components/common/SuccessAlert";
 import Home from "./components/views/Home";
 import Landing from "./components/views/Landing";
 import Campaign from "./components/views/Campaign/Campaign";
@@ -43,6 +44,7 @@ function App() {
 		<Router>
 			<div className={styles.mainContainer}>
 				<Header isLoggedIn={isLoggedIn} />
+				<SuccessAlert />
 				<div className={styles.contentContainer}>
 					<Switch>
 						<AuthRoute exact path="/home" component={Home} />

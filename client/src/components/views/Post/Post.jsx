@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import store from "../../../store";
 import { setActivePost } from "../../../store/actions/campaign";
+import { setSuccessAlert } from "../../../store/actions/alert";
+import { SUCCESS_ALERTS } from "../../../utils/constants";
 import BackButton from "../../common/BackButton";
-import styles from "./Post.module.css";
 import { formatPostDate } from "../../../utils/formatPostDate";
 import PostComments from "../../common/PostCommentsContainer/PostComments";
-import AddComment from "../AddComment/AddComment";
+import AddComment from "../AddComment";
+import styles from "./Post.module.css";
 
 const Post = () => {
 	const post = useSelector((state) => state.campaign.activePost);
@@ -24,7 +26,13 @@ const Post = () => {
 	};
 
 	const onAddCommentClick = () => setShowAddComment(true);
-    const onExitAddCommentScreen = () => setShowAddComment(false);
+
+    const onExitAddCommentScreen = (dispatchAlert = false) => {
+        setShowAddComment(false);
+        if (dispatchAlert) {
+            store.dispatch(setSuccessAlert(SUCCESS_ALERTS.ADD_COMMENT));
+        }
+    };
 
 	return (
 		<div className={styles.postPage}>
