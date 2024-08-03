@@ -39,3 +39,8 @@ export const CAMPAIGN_POST_TYPE_CONFIG = {
 		icon: "map-marker",
 	},
 };
+
+export const SUCCESS_ALERTS = {
+	ADD_POST: "addPost",
+	ADD_COMMENT: "addComment",
+};
