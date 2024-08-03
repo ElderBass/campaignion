@@ -1,3 +1,5 @@
 module.exports = {
-    DnDUser: require('./DnDUser'),
+	DnDUser: require("./DnDUser"),
+    Campaign: require("./Campaign"),
+    CampaignPost: require("./CampaignPost"),
 };

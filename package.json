@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test",
+    "format": "prettier --write ./client/src && git add .",
     "start:prod": "node index.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "build": "cd client && npm i --legacy-peer-deps && npm run build"
+    "build": "cd client && npm i --legacy-peer-deps && npm run build",
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   },
   "homepage": "https://github.com/ElderBass/campaignion#readme",
   "devDependencies": {
+    "bson": "5.2.0",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.20.2",
     "concurrently": "^8.2.2",
@@ -35,6 +38,7 @@
     "mongoose": "6.7.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.4",
-    "prettier": "^3.3.2"
+    "prettier": "^3.3.2",
+    "mongodb": "^4.4.10"
   }
 }

@@ -13,3 +13,29 @@ export const ERROR_MESSAGE = {
 export const LOCAL_STORAGE_KEYS = {
 	LOGGED_IN: "userLoggedIn",
 };
+
+export const CAMPAIGN_POST_TYPES = {
+	ADVENTURE_LOG: "Adventure Log",
+	NPC: "NPCs",
+	LOOT: "Loot",
+	LOCATION: "Locations",
+};
+
+export const CAMPAIGN_POST_TYPE_CONFIG = {
+	ADVENTURE_LOG: {
+		name: CAMPAIGN_POST_TYPES.ADVENTURE_LOG,
+		icon: "book",
+	},
+	NPC: {
+		name: CAMPAIGN_POST_TYPES.NPC,
+		icon: "user",
+	},
+	LOOT: {
+		name: CAMPAIGN_POST_TYPES.LOOT,
+		icon: "dollar-sign",
+	},
+	LOCATION: {
+		name: CAMPAIGN_POST_TYPES.LOCATION,
+		icon: "map-marker",
+	},
+};

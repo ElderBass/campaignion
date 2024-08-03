@@ -1,0 +1,16 @@
+.dm {
+	color: var(--dnd-red);
+	font-weight: 600;
+	margin-right: 1rem;
+}
+
+.accordionDeal {
+	font-family: var(--text-font);
+	color: var(--dnd-red);
+	text-align: left;
+}
+
+.accordionItem {
+	background-color: var(--dnd-black) !important;
+	color: var(--silver) !important;
+}
