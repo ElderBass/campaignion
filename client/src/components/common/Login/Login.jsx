@@ -44,11 +44,11 @@ const LoginForm = ({ setScreen }) => {
 
 	return (
 		<div className={styles.loginContainer}>
+			<h1 className={styles.header}>Resume your journey...</h1>
 			<div className={styles.errorContainer}>
 				{error && <div className={styles.error}>{error}</div>}
 			</div>
 			<form className={styles.loginForm}>
-				<h1 className={styles.header}>Resume your journey...</h1>
 				<div className={styles.inputField}>
 					<label className={styles.label} htmlFor="email">
 						Email:

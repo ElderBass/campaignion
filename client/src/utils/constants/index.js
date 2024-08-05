@@ -43,4 +43,5 @@ export const CAMPAIGN_POST_TYPE_CONFIG = {
 export const SUCCESS_ALERTS = {
 	ADD_POST: "addPost",
 	ADD_COMMENT: "addComment",
+	LOGOUT: "logout",
 };

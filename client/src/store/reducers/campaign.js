@@ -47,6 +47,8 @@ const campaign = (state = INITIAL_STATE, { type, payload }) => {
 				...state,
 				filters: payload,
 			};
+		case CampaignActions.RESET:
+			return INITIAL_STATE;
 		default:
 			return state;
 	}

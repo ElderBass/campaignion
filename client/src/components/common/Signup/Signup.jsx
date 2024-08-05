@@ -54,12 +54,14 @@ const Signup = ({ setScreen }) => {
 
 	return (
 		<div className={styles.signupContainer}>
+			<div className={styles.heading}>
+				<h1 className={styles.header}>Plunder awaits...</h1>
+				<p className={styles.subheader}>Sign up and start rolling</p>
+			</div>
 			<div className={styles.errorContainer}>
 				{error && <div className={styles.error}>{error}</div>}
 			</div>
 			<form className={styles.signupForm}>
-				<h1 className={styles.header}>Plunder awaits...</h1>
-				<p className={styles.subheader}>Sign up and start rolling</p>
 				<div className={styles.inputField}>
 					<label className={styles.label} htmlFor="email">
 						Email:
