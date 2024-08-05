@@ -1,9 +1,14 @@
 {
   "short_name": "Campaignion",
-  "name": "Create React App Sample",
-  "icons": [],
-  "start_url": ".",
+  "name": "Campaignion",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "description": "A D&D campaign companion app.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/png"
+    }
+  ]
 }
