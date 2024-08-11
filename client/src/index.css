@@ -7,6 +7,7 @@
 	--gray: rgb(128, 128, 128);
 	--dark-gray: #333333;
 	--darker-gray: #222222;
+	--dnd-green: #105800;
 	--logo-font: "MedievalSharp", cursive;
 	--text-font: "Belleza", sans-serif;
 }
@@ -71,4 +72,12 @@ h3 {
 
 .dropdown-item {
 	color: var(--silver);
+}
+
+.alert-success {
+	text-align: center;
+	border: solid 2px var(--dnd-green);
+    --bs-alert-color: var(--dnd-green);
+    --bs-alert-bg: var(--dnd-black);
+    --bs-alert-border-color: var(--dnd-green);
 }

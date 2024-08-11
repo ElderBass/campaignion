@@ -21,7 +21,7 @@ const Header = ({ isLoggedIn }) => {
 				>
 					<NavDropdown.Item href="/home">Home</NavDropdown.Item>
 					<NavDropdown.Divider />
-					<NavDropdown.Item href="#action/3.3">
+					<NavDropdown.Item href="/logout">
 						Logout
 					</NavDropdown.Item>
 				</NavDropdown>

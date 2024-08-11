@@ -1,0 +1,10 @@
+.alert {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    bottom: 1rem;
+    padding: 2rem;
+}
