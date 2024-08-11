@@ -43,7 +43,7 @@ function App() {
 	return (
 		<Router>
 			<div className={styles.mainContainer}>
-				<Header isLoggedIn={isLoggedIn} />
+				<Header />
 				<SuccessAlert />
 				<div className={styles.contentContainer}>
 					<Switch>
