@@ -113,7 +113,7 @@ const CreatePostForm = () => {
 							styles.formButton,
 							styles.cancelButton
 						)}
-						onClick={onCancelOrGoBack}
+						onClick={() => onCancelOrGoBack(false)}
 					>
 						Cancel
 					</button>
