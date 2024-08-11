@@ -3,8 +3,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Header.module.css";
+import { useSelector } from "react-redux";
 
-const Header = ({ isLoggedIn }) => {
+const Header = () => {
+	const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
 	return (
 		<div className={styles.header}>
 			<p className={styles.logo}>Campaignion</p>
