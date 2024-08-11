@@ -8,7 +8,7 @@ router.get("/api/dnd/posts/all/:campaignId", bodyParser.json(), async (req, res)
 
 	try {
 		const posts = await db.CampaignPost.find({ campaignId }).sort({
-			date: -1,
+			dateAdded: -1,
 		});
 		console.log("\n posts in get all posts = ", posts, "\n");
 		res.json({ posts, isSuccess: true });
