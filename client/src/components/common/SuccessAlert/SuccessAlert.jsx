@@ -9,7 +9,7 @@ import styles from "./SuccessAlert.module.css";
 const SuccessAlert = () => {
 	const type = useSelector((state) => state.alert.successAlert);
 
-	const { ADD_COMMENT, ADD_POST } = SUCCESS_ALERTS;
+	const { ADD_COMMENT, ADD_POST, LOGOUT } = SUCCESS_ALERTS;
 
 	useEffect(() => {
 		if (type) {
@@ -27,6 +27,7 @@ const SuccessAlert = () => {
 		[ADD_COMMENT]:
 			"Dexterity saving throw succeeded: Comment added successfully.",
 		[ADD_POST]: "Wisdom saving throw succeeded: Post added successfully.",
+		[LOGOUT]: "Charisma saving throw succeeded: You have been logged out.",
 	};
 	const message = alertMap[type];
 
@@ -34,7 +35,7 @@ const SuccessAlert = () => {
 
 	return (
 		<div className={styles.alert}>
-			<Alert dismissible onClose={onClose} variant="success">
+			<Alert onClose={onClose} variant="success">
 				{message}
 			</Alert>
 		</div>

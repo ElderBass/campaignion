@@ -7,7 +7,7 @@ import SuccessAlert from "./components/common/SuccessAlert";
 import Home from "./components/views/Home";
 import Landing from "./components/views/Landing";
 import Campaign from "./components/views/Campaign/Campaign";
-// import Logout from "./components/views/Logout";
+import Logout from "./components/views/Logout";
 // import UserPage from "./components/views/UserPage";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
@@ -58,7 +58,7 @@ function App() {
 							component={CreatePostForm}
 						/>
 						<AuthRoute path="/post/:post" component={Post} />
-						{/* <AuthRoute exact path="/logout" component={Logout} /> */}
+						<AuthRoute exact path="/logout" component={Logout} />
 						<Route exact path="/landing" component={Landing} />
 						<Route component={ComponentMap[CatchAllPage]} />
 					</Switch>

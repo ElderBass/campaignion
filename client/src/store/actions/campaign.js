@@ -39,3 +39,8 @@ export const setPostFilters = (filters) => ({
 	type: SET_POST_FILTERS,
 	payload: filters,
 });
+
+export const RESET = "RESET";
+export const reset = () => ({
+	type: RESET,
+});
