@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "dayjs": "^1.11.12",
     "react-bootstrap": "^2.10.4"
   }
