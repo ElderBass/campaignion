@@ -37,11 +37,6 @@
 	color: var(--silver);
 }
 
-/* .logoutButton:hover {
-	cursor: pointer;
-	color: var(--deep-green);
-} */
-
 .cancelButton {
 	font-size: 1.5rem;
 	padding: .75rem 1rem;
@@ -52,8 +47,3 @@
 	color: var(--dnd-red);
 	border: 2px solid var(--dnd-red);
 }
-
-/* .cancelButton:hover {
-	cursor: pointer;
-	color: var(--dark-gray);
-} */
