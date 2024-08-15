@@ -11,8 +11,8 @@ import Logout from "./components/views/Logout";
 // import UserPage from "./components/views/UserPage";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
-import CreatePostForm from "./components/common/CreatePostForm";
 import Post from "./components/views/Post";
+import CreateOrEditPostForm from "./components/common/CreateOrEditPostForm";
 
 function App() {
 	const ComponentMap = {
@@ -54,8 +54,8 @@ function App() {
 						/>
 						<AuthRoute
 							exact
-							path="/create-post"
-							component={CreatePostForm}
+							path="/post-form"
+							component={CreateOrEditPostForm}
 						/>
 						<AuthRoute path="/post/:post" component={Post} />
 						<AuthRoute exact path="/logout" component={Logout} />
