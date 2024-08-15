@@ -1,7 +1,7 @@
 .addCommentFormContainer {
 	display: flex;
 	flex-direction: column;
-    align-items: center;
+	align-items: center;
 	gap: 1.5rem;
 	width: 100%;
 	height: 100vh;
@@ -14,8 +14,8 @@
 }
 
 .heading {
-    width: 60%;
-    text-align: center;
+	width: 60%;
+	text-align: center;
 }
 
 .addCommentForm {
@@ -88,4 +88,32 @@
 	background-color: var(--dnd-black);
 	color: var(--dnd-red);
 	border: 2px solid var(--dnd-red);
+}
+
+@media screen and (min-width: 768px) {
+	.addCommentFormContainer {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.addCommentForm {
+		width: 50%;
+	}
+
+	.formInput {
+		width: 80%;
+	}
+
+	.textArea {
+		width: 80%;
+	}
+
+	.actions {
+		width: 80%;
+	}
+
+	.formButton {
+		width: 40%;
+		margin-bottom: 0.5rem;
+	}
 }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { getCampaignPosts } from "../../../utils/getCampaignPosts";
+import { setActivePostType } from "../../../store/actions/campaign";
+import store from "../../../store";
 import LoadingScreen from "../../common/LoadingScreen";
 import CampaignPosts from "../../common/CampaignPosts";
 import CampaignDetailScreen from "../../common/CampaignDetailScreen";
@@ -18,6 +20,10 @@ const Campaign = () => {
 		setLoading(true);
 		getCampaignPosts();
 		setLoading(false);
+
+		return () => {
+			store.dispatch(setActivePostType(null));
+		};
 	}, [campaign]);
 
 	return (

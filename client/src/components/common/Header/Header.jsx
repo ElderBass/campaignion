@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,9 +8,12 @@ import { useSelector } from "react-redux";
 
 const Header = () => {
 	const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
 	return (
 		<div className={styles.header}>
-			<p className={styles.logo}>Campaignion</p>
+			<Link to="/home" className={styles.logo}>
+				Campaignion
+			</Link>
 			{isLoggedIn ? (
 				<NavDropdown
 					title={
@@ -23,9 +27,7 @@ const Header = () => {
 				>
 					<NavDropdown.Item href="/home">Home</NavDropdown.Item>
 					<NavDropdown.Divider />
-					<NavDropdown.Item href="/logout">
-						Logout
-					</NavDropdown.Item>
+					<NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
 				</NavDropdown>
 			) : null}
 		</div>

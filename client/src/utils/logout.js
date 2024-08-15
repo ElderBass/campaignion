@@ -7,6 +7,6 @@ import { setSuccessAlert } from "../store/actions/alert";
 export const logout = () => {
 	localStorage.setItem(LOCAL_STORAGE_KEYS.LOGGED_IN, false);
 	store.dispatch(UserActions.logoutUser());
-    store.dispatch(reset([]));
-    store.dispatch(setSuccessAlert(SUCCESS_ALERTS.LOGOUT));
+	store.dispatch(reset([]));
+	store.dispatch(setSuccessAlert(SUCCESS_ALERTS.LOGOUT));
 };

@@ -14,7 +14,7 @@
 
 .contentContainer {
 	grid-area: content;
-  margin-top: 56px;
+	margin-top: 56px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,5 +22,5 @@
 	padding: 2rem 1rem 0 1rem;
 	z-index: 1;
 	height: 100vh;
-  width: 100vw;
+	width: 100vw;
 }
