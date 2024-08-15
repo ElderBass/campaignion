@@ -10,7 +10,8 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "build": "npm i && cd client && npm i --legacy-peer-deps && npm run build",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "seed:campaign": "node seedCampaign.js"
   },
   "repository": {
     "type": "git",
