@@ -6,13 +6,14 @@ import { setSuccessAlert } from "../../../store/actions/alert";
 import { SUCCESS_ALERTS } from "../../../utils/constants";
 import { isValidPost } from "../../../utils/isValidPost";
 import { getPosterName } from "../../../utils/getPosterName";
-import { addPost } from "../../../api";
-import { setCampaignPosts } from "../../../store/actions/campaign";
-import styles from "./CreatePostForm.module.css";
+import { addPost, updatePost } from "../../../api";
+import { getCampaignPosts } from "../../../utils/getCampaignPosts";
+import { setActivePost } from "../../../store/actions/campaign";
+import styles from "./CreateOrEditPostForm.module.css";
 
-const CreatePostForm = () => {
+const CreateOrEditPostForm = () => {
 	const {
-		state: { type },
+		state: { type, postToEdit = null },
 	} = useLocation();
 
 	const {
@@ -21,8 +22,10 @@ const CreatePostForm = () => {
 
 	const history = useHistory();
 
-	const [title, setTitle] = useState("");
-	const [description, setDescription] = useState("");
+	const [title, setTitle] = useState(postToEdit ? postToEdit.title : "");
+	const [description, setDescription] = useState(
+		postToEdit ? postToEdit.description : ""
+	);
 	const [error, setError] = useState("");
 
 	const onSubmit = async (e) => {
@@ -34,6 +37,7 @@ const CreatePostForm = () => {
 			description,
 			poster: getPosterName(),
 			campaignId: _id,
+			_id: postToEdit ? postToEdit._id : null,
 		};
 
 		const { isValid, error } = isValidPost(postData);
@@ -44,16 +48,18 @@ const CreatePostForm = () => {
 		}
 
 		try {
-			const response = await addPost(postData);
-			const { post } = response.data;
-			const { campaignPosts } = store.getState().campaign;
-			const updatedPosts = [...campaignPosts, post];
-			store.dispatch(setCampaignPosts(updatedPosts));
+			const axiosFunc = postToEdit ? updatePost : addPost;
+			const response = await axiosFunc(postData);
+
+			if (postToEdit) {
+				store.dispatch(setActivePost(response.data.post));
+			}
+			await getCampaignPosts();
 			onCancelOrGoBack(true);
 		} catch (e) {
-			console.log("\n ERROR CREATING POST ", e, "\n\n");
+			console.log("\n ERROR CREATING/EDITING POST ", e, "\n\n");
 			setError(
-				"Constitution saving throw failed: Something went wrong creating your post, please roll again."
+				"Constitution saving throw failed: Something went wrong submitting your post, please roll again."
 			);
 		}
 	};
@@ -70,15 +76,20 @@ const CreatePostForm = () => {
 
 	const onCancelOrGoBack = (dispatchAlert = false) => {
 		resetState();
-		history.push(`/campaign/${_id}`);
+		const path = postToEdit
+			? `/post/${postToEdit._id}`
+			: `/campaign/${_id}`;
+		history.push(path);
 		if (dispatchAlert) {
 			store.dispatch(setSuccessAlert(SUCCESS_ALERTS.ADD_POST));
 		}
 	};
 
+	const formTitle = postToEdit ? "Edit Post" : "Create a Post";
+
 	return (
 		<div className={styles.createPostFormContainer}>
-			<h1>Create a Post</h1>
+			<h1>{formTitle}</h1>
 			{error && <p className={styles.error}>{error}</p>}
 			<form className={styles.createPostForm} onSubmit={onSubmit}>
 				<label htmlFor="title" />
@@ -88,6 +99,7 @@ const CreatePostForm = () => {
 					id="title"
 					name="title"
 					placeholder="Give it a title"
+					value={title}
 				/>
 				<label htmlFor="description" />
 				<textarea
@@ -96,6 +108,7 @@ const CreatePostForm = () => {
 					id="description"
 					name="description"
 					placeholder="Add a description"
+					value={description}
 				/>
 				<div className={styles.actions}>
 					<button
@@ -123,4 +136,4 @@ const CreatePostForm = () => {
 	);
 };
 
-export default CreatePostForm;
+export default CreateOrEditPostForm;

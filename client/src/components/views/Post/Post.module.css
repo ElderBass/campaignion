@@ -46,6 +46,30 @@
 	background-color: var(--light-red);
 }
 
+.postBodyHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.headerSpacer {
+	flex: 0 1 32px;
+}
+
+.editButton {
+	width: 32px;
+	background-color: inherit;
+	border: none;
+	color: var(--deep-red);
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.editButton:hover {
+	color: var(--dnd-red);
+}
+
 .addCommentButton {
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
