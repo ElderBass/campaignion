@@ -82,3 +82,31 @@
 	color: var(--dnd-red);
 	border: 2px solid var(--dnd-red);
 }
+
+@media screen and (min-width: 768px) {
+	.createPostFormContainer {
+		align-items: center;
+		justify-content: center;
+	}
+
+	.createPostForm {
+		width: 50%;
+	}
+
+	.formInput {
+		width: 80%;
+	}
+
+	.textArea {
+		width: 80%;
+	}
+
+	.actions {
+		width: 80%;
+	}
+
+	.formButton {
+		width: 40%;
+		margin-bottom: 0.5rem;
+	}
+}

@@ -1,5 +1,5 @@
 import axios from "axios";
-// axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "http://localhost:8000";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 export const addUser = (userData) =>
@@ -27,4 +27,5 @@ export const getAllPostsOfType = (campaignId, postType) =>
 export const getOnePost = (postId) =>
 	axios.get(`/api/dnd/posts/get-one/${postId}`);
 export const addPost = (post) => axios.post("/api/dnd/posts/add", { post });
-export const updatePost = (post) => axios.put("/api/dnd/posts/update", { post });
+export const updatePost = (post) =>
+	axios.put("/api/dnd/posts/update", { post });

@@ -57,3 +57,29 @@
 	cursor: pointer;
 	transition: all 0.3s;
 }
+
+@media screen and (min-width: 768px) {
+	.postPage {
+		width: 80%;
+	}
+
+	.postBody {
+		width: 100%;
+	}
+
+	.postActions {
+		width: 100%;
+	}
+
+	.postDeets {
+		width: 100%;
+	}
+
+	.postDeet {
+		width: 90%;
+	}
+
+	.addCommentButton {
+		width: 20%;
+	}
+}

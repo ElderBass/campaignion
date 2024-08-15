@@ -27,17 +27,20 @@ const Post = () => {
 
 	const onAddCommentClick = () => setShowAddComment(true);
 
-    const onExitAddCommentScreen = (dispatchAlert = false) => {
-        setShowAddComment(false);
-        if (dispatchAlert) {
-            store.dispatch(setSuccessAlert(SUCCESS_ALERTS.ADD_COMMENT));
-        }
-    };
+	const onExitAddCommentScreen = (dispatchAlert = false) => {
+		setShowAddComment(false);
+		if (dispatchAlert) {
+			store.dispatch(setSuccessAlert(SUCCESS_ALERTS.ADD_COMMENT));
+		}
+	};
 
 	return (
 		<div className={styles.postPage}>
 			{showAddComment ? (
-				<AddComment post={post} exitScreen={onExitAddCommentScreen} />
+				<AddComment
+					post={post}
+					exitScreen={() => onExitAddCommentScreen(false)}
+				/>
 			) : (
 				<React.Fragment>
 					<div className={styles.postActions}>

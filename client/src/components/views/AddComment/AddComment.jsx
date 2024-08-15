@@ -26,7 +26,7 @@ const AddComment = ({ post, exitScreen }) => {
 
 		try {
 			const response = await updatePost(postData);
-            store.dispatch(setActivePost(response.data.post));
+			store.dispatch(setActivePost(response.data.post));
 			await getCampaignPosts();
 			exitScreen(true);
 		} catch (e) {
