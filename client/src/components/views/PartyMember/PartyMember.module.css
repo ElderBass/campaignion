@@ -1,0 +1,44 @@
+.partyMemberContainer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: var(--silver);
+}
+
+.titleContainer {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: center;
+}
+
+.spacer {
+	flex: 0 1 40px;
+}
+
+.heading {
+	color: var(--dnd-red);
+	font-size: 2rem;
+}
+
+.memberDetails {
+	padding-top: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 80%;
+	gap: 0.25rem;
+}
+
+.memberDetail {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.detailValue {
+	color: var(--dnd-red);
+}
