@@ -1,10 +1,18 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import Accordion from "react-bootstrap/Accordion";
-import styles from "./CampaignDetailScreen.module.css";
 import CampaignPostMenu from "../CampaignPostMenu";
+import { getPartyMemberLink } from "../../../utils/getPartyMemberLink";
+import styles from "./CampaignDetailScreen.module.css";
 
 const CampaignDetailScreen = ({ campaign }) => {
+	const history = useHistory();
+
 	const { name, partyMembers, dungeonMaster } = campaign;
+
+	const onMemberClick = (member) => {
+		history.push(getPartyMemberLink(member.name), { member });
+	};
 
 	return (
 		<React.Fragment>
@@ -16,13 +24,17 @@ const CampaignDetailScreen = ({ campaign }) => {
 			<CampaignPostMenu />
 			<Accordion className={styles.accordionDeal}>
 				<Accordion.Item className={styles.accordionItem} eventKey="0">
-					<Accordion.Header className={styles.accordionHeader}>
-						Party
-					</Accordion.Header>
+					<Accordion.Header>Party</Accordion.Header>
 					<Accordion.Body>
 						<ul>
 							{partyMembers.map((member) => (
-								<li key={member.name}>{member.name}</li>
+								<li
+									key={member.name}
+									className={styles.accordionListItem}
+									onClick={() => onMemberClick(member)}
+								>
+									{member.name}
+								</li>
 							))}
 						</ul>
 					</Accordion.Body>

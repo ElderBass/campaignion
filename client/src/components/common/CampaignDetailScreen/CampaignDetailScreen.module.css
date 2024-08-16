@@ -12,5 +12,15 @@
 
 .accordionItem {
 	background-color: var(--dnd-black) !important;
+}
+
+.accordionListItem {
+	background-color: var(--dnd-black) !important;
 	color: var(--silver) !important;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.accordionListItem:hover {
+	color: var(--light-red) !important;
 }

@@ -12,6 +12,7 @@ import Logout from "./components/views/Logout";
 // import FourOhFourPage from "./components/views/FourOhFourPage";
 import styles from "./App.module.css";
 import Post from "./components/views/Post";
+import PartyMember from "./components/views/PartyMember";
 import CreateOrEditPostForm from "./components/common/CreateOrEditPostForm";
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
 							component={CreateOrEditPostForm}
 						/>
 						<AuthRoute path="/post/:post" component={Post} />
+						<AuthRoute
+							path="/partyMember/:playerName"
+							component={PartyMember}
+						/>
 						<AuthRoute exact path="/logout" component={Logout} />
 						<Route exact path="/landing" component={Landing} />
 						<Route component={ComponentMap[CatchAllPage]} />
