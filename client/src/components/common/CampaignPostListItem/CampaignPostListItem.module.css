@@ -12,16 +12,18 @@
 	text-overflow: ellipsis;
 	overflow: hidden;
 	width: 100%;
+	max-width: 800px;
 	max-height: 10rem;
+	cursor: pointer;
 }
 
 .postListItem:hover {
-	background-color: var(--dnd-red);
+	background-color: var(--deep-red);
 	color: var(--silver);
 	box-shadow: 3px 3px 4px var(--silver);
 
 	.span {
-		color: var(--dnd-black);
+		color: var(--light-red);
 	}
 }
 

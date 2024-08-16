@@ -3,8 +3,8 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+	justify-content: space-evenly;
+	align-items: center;
 	text-align: center;
 	padding-top: 1rem;
 }
@@ -18,11 +18,11 @@
 }
 
 .actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: .5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 0.5rem;
 }
 
 .logoutButton {
@@ -39,11 +39,26 @@
 
 .cancelButton {
 	font-size: 1.5rem;
-	padding: .75rem 1rem;
-    border-radius: 16px;
+	padding: 0.75rem 1rem;
+	border-radius: 16px;
 	cursor: pointer;
 	width: 50%;
-    background-color: var(--dnd-black);
+	background-color: var(--dnd-black);
 	color: var(--dnd-red);
 	border: 2px solid var(--dnd-red);
+}
+
+@media screen and (min-width: 768px) {
+	.logoutPage {
+		width: 50%;
+	}
+
+	.logoutButton {
+		width: 30%;
+		margin-bottom: 1rem;
+	}
+
+	.cancelButton {
+		width: 30%;
+	}
 }

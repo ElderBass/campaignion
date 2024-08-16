@@ -46,6 +46,30 @@
 	background-color: var(--light-red);
 }
 
+.postBodyHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.headerSpacer {
+	flex: 0 1 32px;
+}
+
+.editButton {
+	width: 32px;
+	background-color: inherit;
+	border: none;
+	color: var(--deep-red);
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.editButton:hover {
+	color: var(--dnd-red);
+}
+
 .addCommentButton {
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
@@ -56,4 +80,30 @@
 	background-color: var(--dnd-red);
 	cursor: pointer;
 	transition: all 0.3s;
+}
+
+@media screen and (min-width: 768px) {
+	.postPage {
+		width: 80%;
+	}
+
+	.postBody {
+		width: 100%;
+	}
+
+	.postActions {
+		width: 100%;
+	}
+
+	.postDeets {
+		width: 100%;
+	}
+
+	.postDeet {
+		width: 90%;
+	}
+
+	.addCommentButton {
+		width: 20%;
+	}
 }

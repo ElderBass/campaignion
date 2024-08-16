@@ -11,6 +11,12 @@
 	color: var(--light-red);
 	box-shadow: 2px 4px 8px var(--deep-red);
 	text-align: center;
+	cursor: pointer;
+}
+
+.campaignCard:hover {
+	border: solid 4px var(--light-red);
+	box-shadow: 2px 4px 8px var(--light-red);
 }
 
 .campaignName {

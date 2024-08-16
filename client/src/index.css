@@ -38,7 +38,8 @@ a {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
 	margin: 0;
 }
 
@@ -77,7 +78,7 @@ h3 {
 .alert-success {
 	text-align: center;
 	border: solid 2px var(--dnd-green);
-    --bs-alert-color: var(--dnd-green);
-    --bs-alert-bg: var(--dnd-black);
-    --bs-alert-border-color: var(--dnd-green);
+	--bs-alert-color: var(--dnd-green);
+	--bs-alert-bg: var(--dnd-black);
+	--bs-alert-border-color: var(--dnd-green);
 }

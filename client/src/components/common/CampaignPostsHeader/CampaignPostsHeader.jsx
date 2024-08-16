@@ -20,7 +20,7 @@ const CampaignPostsHeader = ({ type, searchInput }) => {
 		store.dispatch(setActivePostType(null));
 	};
 
-	const onAddPost = () => history.push("/create-post", { type });
+	const onAddPost = () => history.push("/post-form", { type });
 
 	return (
 		<div className={styles.campaignPostsHeader}>

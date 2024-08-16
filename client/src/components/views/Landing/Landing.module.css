@@ -46,3 +46,14 @@
 	color: var(--dnd-red);
 	border: 2px solid var(--dnd-red);
 }
+
+@media screen and (min-width: 768px) {
+	.landingActions {
+		width: 50%;
+		height: 100%;
+	}
+
+	.landingButton {
+		width: 30%;
+	}
+}
