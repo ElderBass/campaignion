@@ -5,13 +5,16 @@ import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Header.module.css";
 import { useSelector } from "react-redux";
+import store from "../../../store";
+import { setActivePostType } from "../../../store/actions/campaign";
 
 const Header = () => {
 	const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+	const onHomeClick = () => store.dispatch(setActivePostType(null));
 
 	return (
 		<div className={styles.header}>
-			<Link to="/home" className={styles.logo}>
+			<Link onClick={onHomeClick} to="/home" className={styles.logo}>
 				Campaignion
 			</Link>
 			{isLoggedIn ? (
@@ -25,7 +28,7 @@ const Header = () => {
 					}
 					id="headerDropdown"
 				>
-					<NavDropdown.Item href="/home">Home</NavDropdown.Item>
+					<NavDropdown.Item onClick={onHomeClick} href="/home">Home</NavDropdown.Item>
 					<NavDropdown.Divider />
 					<NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
 				</NavDropdown>

@@ -63,23 +63,25 @@ const Post = () => {
 						<div className={styles.postBodyHeader}>
 							<div className={styles.headerSpacer} />
 							<h2>{title}</h2>
-							{canEdit && (
-								<button
-									title="Edit post"
-									className={styles.editButton}
-									onClick={() =>
-										history.push("/post-form", {
-											type: post.type,
-											postToEdit: post,
-										})
-									}
-								>
-									<FontAwesomeIcon
-										icon={faFeatherPointed}
-										size="xl"
-									/>
-								</button>
-							)}
+							<div className={styles.headerSpacer}>
+								{canEdit && (
+									<button
+										title="Edit post"
+										className={styles.editButton}
+										onClick={() =>
+											history.push("/post-form", {
+												type: post.type,
+												postToEdit: post,
+											})
+										}
+									>
+										<FontAwesomeIcon
+											icon={faFeatherPointed}
+											size="xl"
+										/>
+									</button>
+								)}
+							</div>
 						</div>
 						<p>{description}</p>
 						<div className={styles.postDeets}>
